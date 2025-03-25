@@ -1,0 +1,9 @@
+<p class="texto" [hidden]="exibirFraseBtn">{{ fraseAtual }}</p>
+
+<div class="container">
+  <img [src]="imagem" alt="Biscoito da Sorte" class="img">
+
+  <button (click)="quebrar()" class="botao">Quebrar Biscoito</button>
+
+  <button (click)="restaurar()" class="secundario">Restaurar Biscoito</button>
+</div>

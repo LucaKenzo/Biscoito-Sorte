@@ -1,14 +1,19 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-frase',
+  selector: 'app-botao',
   standalone: false,
-  templateUrl: './frase.component.html',
-  styleUrl: './frase.component.css'
+  templateUrl: './botao.component.html',
+  styleUrl: './botao.component.css'
 })
-export class FraseComponent {
+export class BotaoComponent {
+  @Input() biscoitoQuebrado : any;
 
   @Input() exibirFraseBtn : boolean = true;
+
+    imagem="biscoito.png"
+
+
 
   frases : string[] = [
     "Grandes jornadas começam com um pequeno passo.",
@@ -36,5 +41,19 @@ export class FraseComponent {
 
   frasebtn() {
     this.exibirFraseBtn = !this.exibirFraseBtn;
+  }
+
+  quebrar(){
+    if (this.exibirFraseBtn == true){
+      this.exibirFraseBtn = !this.exibirFraseBtn;
+    }
+    this.imagem="biscoito-aberto.png"
+  }
+
+  restaurar() {
+    if (this.exibirFraseBtn == false){
+      this.exibirFraseBtn = !this.exibirFraseBtn;
+    }
+    this.imagem="biscoito.png"
   }
 }

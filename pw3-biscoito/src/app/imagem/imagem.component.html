@@ -1,6 +1,7 @@
 <div class="container">
-    <img [src]="imagemAtual" alt="Biscoito da Sorte" class="img">
-    <button (click)="quebrarOuRestaurar()">
-      {{ biscoitoQuebrado ? 'Restaurar Biscoito' : 'Quebrar Biscoito' }}
-    </button>
+    <img [src]="imagem" alt="Biscoito da Sorte" class="img">
+    
+    <button (click)="quebrar()" class="botao">Quebrar Biscoito</button>
+
+    <button (click)="restaurar()" class="secundario">Restaurar Biscoito</button>
 </div>

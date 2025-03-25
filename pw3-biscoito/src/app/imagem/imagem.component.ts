@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-imagem',
@@ -7,13 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './imagem.component.css'
 })
 export class ImagemComponent {
-  imagemInteira: string = "biscoito.png";
-  imagemQuebrada: string = "biscoito-aberto.png";
-  imagemAtual: string = this.imagemInteira;
-  biscoitoQuebrado: boolean = false;
+imagemAtual: any;
+@Input() biscoitoQuebrado : any;
 
-  quebrarOuRestaurar() {
-    this.biscoitoQuebrado = !this.biscoitoQuebrado;
-    this.imagemAtual = this.biscoitoQuebrado ? this.imagemQuebrada : this.imagemInteira;
-  }
+
+  imagem="biscoito.png"
+
+quebrar(){
+  this.imagem="biscoito-aberto.png"
+}
+
+restaurar() {
+  this.imagem="biscoito.png"
+}
 }
